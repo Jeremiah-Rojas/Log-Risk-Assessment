@@ -90,4 +90,18 @@ Node: Code in Javascript
 </br>
 - Reformats the log analysis so that each value (risk_score, category, short_explanation, and recommended_action) are formatted in separate JSON objects.
 - The image below shows the before and after of the log analysis. The right shows the output from the AI model treating the analysis as one blob of text. The javascript in the middle separates the data so that each label applies to one distinct value. This makes the data optimal for transferring to the following nodes.
+<img width="1089" height="376" alt="image" src="https://github.com/user-attachments/assets/1154df13-d8a7-4093-9749-3074f5775163" />
 
+### 9. Decision Node
+Node: Switch
+</br>
+Routes based on AI risk score:
+- Low risk: 0–39
+- Medium risk: 40–69
+- High risk 70–100 
+</br> The following table shows each action taken based on the risk score:
+
+
+## Conclusion
+
+Ha
