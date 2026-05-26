@@ -118,4 +118,4 @@ This is the “high” action result after running the workflow:
 
 ## Conclusion
 
-Ha
+This workflow demonstrates the effective nature of AI in cybersecurity allowing time consuming tasks, such as log analysis, to be completed within a matter of seconds. In fact, when this process is run, it takes about 20 seconds to complete and is performed automatically. AI is not replacing people; people who can use AI are replacing those that can't.
