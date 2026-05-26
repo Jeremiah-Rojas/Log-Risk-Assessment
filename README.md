@@ -7,7 +7,7 @@ This workflow is meant to roughly simulate a log risk analysis and the actions t
 
 </br>Below is each node explained in a little more detail about what is happening.
 
-### Device Used
+### Devices Used:
 - N8N Software (locally installed)
 - Google Gemini API
 - Google Gmail API
