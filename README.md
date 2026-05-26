@@ -105,6 +105,17 @@ Routes based on AI risk score:
 |----|----|----|
 | **10. High-Risk Action**<br>Node: Send Email (Gmail)<br><br>Sends an email to the security team informing them of the incident.<br><br>The message includes:<br>- Risk score<br>- Type of attack<br>- Explanation of attack<br>- Recommended action | **11. Medium-Risk Action**<br>Node: Create Ticket (Google Sheets)<br><br>Records the incident automatically<br><br>Allows for a simple ticketing system to track what incidents were found | **12. Low-Risk Action**<br>Node: Read/Write Files from Disk<br>Stores analysis for quarterly review evidence<br><br>Note: I was struggling to make this node work because I kept running into a “File not writable” error. Running these commands in CMD allowed the workflow to work successfully. Adding these environment variables tells n8n to store files on the local filesystem and give explicit permission for what folder n8n can access:<br><br>N8N_BINARY_DATA_MODE=filesystem<br>N8N_RESTRICT_FILE_ACCESS_TO="absolute_path_to_folder" |
 
+This is the “high” action result after running the workflow:
+<br><img width="1089" height="499" alt="image" src="https://github.com/user-attachments/assets/3888c046-5656-4dee-a4ff-9be078d4db2b" />
+
+<br>This is the low action result:
+<br><img width="1087" height="548" alt="image" src="https://github.com/user-attachments/assets/02c8ca6d-8c7f-47a8-bb0a-1d7bf8c65360" />
+
+
+<br>This is the medium action:
+<br><img width="1091" height="515" alt="image" src="https://github.com/user-attachments/assets/94415f48-3215-4c94-a2e9-54718a4db584" />
+
+
 ## Conclusion
 
 Ha
