@@ -47,5 +47,47 @@ Node: Code in Javascript
 - The image below shows the javascript used to fix the logs (right) and the reformatted logs are shown to the left:
 <img width="1088" height="491" alt="image" src="https://github.com/user-attachments/assets/4d73f959-558f-4d90-9990-de0af1e4fd94" />
 
-###
+### 6. Normalize Data Node (Data Formatting1)
+Node: Code in Javascript
+</br>
+- Reformats the logs as a single entity
+- This allows for the following node (the AI) to look over the logs and treat them as a single item. Before this node was created, Gemini was treating each log as a separate entity and performing a per log analysis and as a result it took a noticeably long time to complete and used up my token count for the AI API.
+- The image below shows the javascript used to fix the logs (right) and the reformatted logs are shown to the left:
+<img width="1087" height="492" alt="image" src="https://github.com/user-attachments/assets/ad61f669-fb98-464e-b6f2-91c57d109902" />
+
+### 7. AI Analysis Node
+Node: Google Gemini
+</br>
+- Uses an LLM to analyze logs from Splunk to detect malicious activity
+- This was the prompt given to it (the line of code at the bottom imports the logs):
+```
+You are a cybersecurity log analyst.
+
+Analyze the logs and determine if there is malicious or benign behavior going on.
+
+The final result should include the following fields. Return ONLY valid JSON with these fields:
+- risk_score (integer 0–100)
+- category (brute_force | scan | anomaly | benign)
+- short explanation (string)
+- recommended_action (string)
+
+Rules:
+- Risk score is as follows: (0–39) Low risk, (40-69) Medium risk, (70-100) High risk
+- Be conservative: only mark high risk when evidence is strong.
+- brute_force: repeated auth failures or login attacks
+- scan: probing, enumeration, unusual access patterns
+- anomaly: unusual but unclear malicious intent
+- benign: normal activity
+
+Output only JSON .Do not include markdown or extra text.
+These are the logs to be analyzed: 
+{{ JSON.stringify($json.logs) }}
+
+```
+
+### 8. Normalize Data Node (Data Formatting2)
+Node: Code in Javascript
+</br>
+- Reformats the log analysis so that each value (risk_score, category, short_explanation, and recommended_action) are formatted in separate JSON objects.
+- The image below shows the before and after of the log analysis. The right shows the output from the AI model treating the analysis as one blob of text. The javascript in the middle separates the data so that each label applies to one distinct value. This makes the data optimal for transferring to the following nodes.
 
