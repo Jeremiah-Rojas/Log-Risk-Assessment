@@ -100,7 +100,9 @@ Routes based on AI risk score:
 - Medium risk: 40–69
 - High risk 70–100 
 </br> The following table shows each action taken based on the risk score:
-
+| High Risk | Medium Risk | Low Risk |
+|---|---|---|
+| 10. High-Risk Action<br><br>Node: Send Email (Gmail)<br>Sends an email to the security team informing them of the incident.<br><br>The message includes:<br>- Risk score<br>- Type of attack<br>- Explanation of attack<br>- Recommended action | 11. Medium-Risk Action<br><br>Node: Create Ticket (Google Sheets)<br>Records the incident automatically.<br><br>This allows for a simple ticketing system to track what incidents were found. | 12. Low-Risk Action<br><br>Node: Read/Write Files from Disk<br>Stores analysis for quarterly review evidence.<br><br>Note: I was struggling to make this node work because I kept running into a “File not writable” error. Running the following commands in CMD allowed the workflow to work successfully. These commands tell n8n to store files on the local filesystem and give explicit permission for what folder n8n can access:<br><br>N8N_BINARY_DATA_MODE=filesystem<br>N8N_RESTRICT_FILE_ACCESS_TO="absolute_path_to_folder" |
 
 ## Conclusion
 
