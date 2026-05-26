@@ -40,6 +40,12 @@ Node: HTTP Request
 Outputs logs in a slightly malformed JSON format:
 <img width="610" height="775" alt="image" src="https://github.com/user-attachments/assets/008daa7c-4313-4a0d-b614-7a5e36895dde" />
 
+### 5. Normalize Data Node (Data Formatting)
+Node: Code in Javascript
+</br>
+- Cleans and formats logs into consistent structure
+- The image below shows the javascript used to fix the logs (right) and the reformatted logs are shown to the left:
+<img width="1088" height="491" alt="image" src="https://github.com/user-attachments/assets/4d73f959-558f-4d90-9990-de0af1e4fd94" />
 
-
+###
 
