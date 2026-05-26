@@ -14,3 +14,7 @@ This workflow is meant to roughly simulate a log risk analysis and the actions t
 - Google Drive/Sheets API
 
 ## Node Details
+
+### 1. Execution Node
+</br>Node: Click Execute
+</br>This starts the entire workflow
